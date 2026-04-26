@@ -1,0 +1,13 @@
+{
+  "search_placeholder": "搜索标签页…",
+  "tab_count": "{{count}} 个标签 · {{sites}} 个网站",
+  "settings": "设置",
+  "close_all": "关闭全部",
+  "close_tab": "关闭标签",
+  "theme_label": "主题",
+  "theme_light": "浅色",
+  "theme_dark": "深色",
+  "theme_system": "跟随系统",
+  "no_tabs": "暂无打开的标签页",
+  "no_results": "没有匹配 \"{{query}}\" 的标签页"
+}

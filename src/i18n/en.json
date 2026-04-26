@@ -1,0 +1,13 @@
+{
+  "search_placeholder": "Search tabs…",
+  "tab_count": "{{count}} tabs · {{sites}} sites",
+  "settings": "Settings",
+  "close_all": "Close all",
+  "close_tab": "Close tab",
+  "theme_label": "Theme",
+  "theme_light": "Light",
+  "theme_dark": "Dark",
+  "theme_system": "Follow system",
+  "no_tabs": "No open tabs",
+  "no_results": "No tabs match \"{{query}}\""
+}
