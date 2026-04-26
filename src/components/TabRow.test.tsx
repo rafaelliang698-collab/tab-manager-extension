@@ -8,7 +8,7 @@ const mockTab: chrome.tabs.Tab = {
   favIconUrl: 'https://github.com/favicon.ico',
   windowId: 1, active: false, pinned: false, index: 0,
   highlighted: false, incognito: false, selected: false,
-  discarded: false, autoDiscardable: true, groupId: -1,
+  discarded: false, autoDiscardable: true, groupId: -1, frozen: false,
 }
 
 describe('TabRow', () => {
@@ -19,7 +19,7 @@ describe('TabRow', () => {
 
   it('switches to tab on row click', () => {
     vi.mocked(chrome.tabs.update).mockImplementation((_id, _p, cb) => { cb?.(mockTab); return Promise.resolve(mockTab) })
-    vi.mocked(chrome.windows.update).mockImplementation((_id, _p, cb) => { cb?.({}); return Promise.resolve({}) })
+    vi.mocked(chrome.windows.update).mockImplementation((_id, _p, cb) => { cb?.({} as chrome.windows.Window); return Promise.resolve({} as chrome.windows.Window) })
     render(<TabRow tab={mockTab} searchQuery="" />)
     fireEvent.click(screen.getByRole('button', { name: /Explore/i }))
     expect(chrome.tabs.update).toHaveBeenCalledWith(42, { active: true }, expect.any(Function))

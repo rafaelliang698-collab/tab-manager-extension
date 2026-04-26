@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from 'vitest'
 import { getLayout, setLayout, getTheme, setTheme } from './storage'
-import type { Layout } from 'react-grid-layout'
+import type { LayoutItem } from 'react-grid-layout'
 
 describe('getLayout', () => {
   it('returns stored layout', async () => {
@@ -20,7 +20,7 @@ describe('getLayout', () => {
 describe('setLayout', () => {
   it('calls chrome.storage.local.set with layout key', async () => {
     vi.mocked(chrome.storage.local.set).mockImplementation((_o, cb) => cb?.())
-    const layout: Layout[] = [{ i: 'github.com', x: 0, y: 0, w: 1, h: 3 }]
+    const layout: LayoutItem[] = [{ i: 'github.com', x: 0, y: 0, w: 1, h: 3 }]
     await setLayout(layout)
     expect(chrome.storage.local.set).toHaveBeenCalledWith({ layout }, expect.any(Function))
   })

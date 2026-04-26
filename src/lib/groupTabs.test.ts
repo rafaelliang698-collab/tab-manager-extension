@@ -5,7 +5,7 @@ const makeTab = (id: number, url: string): chrome.tabs.Tab => ({
   id, url, title: `Tab ${id}`, favIconUrl: '',
   windowId: 1, active: false, pinned: false, index: id,
   highlighted: false, incognito: false, selected: false,
-  discarded: false, autoDiscardable: true, groupId: -1,
+  discarded: false, autoDiscardable: true, groupId: -1, frozen: false,
 })
 
 describe('groupTabsByDomain', () => {

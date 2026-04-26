@@ -7,7 +7,7 @@ const makeTabs = (count: number): chrome.tabs.Tab[] =>
     id: i + 1, url: `https://github.com/page-${i}`, title: `GitHub Page ${i}`,
     favIconUrl: '', windowId: 1, active: false, pinned: false, index: i,
     highlighted: false, incognito: false, selected: false,
-    discarded: false, autoDiscardable: true, groupId: -1,
+    discarded: false, autoDiscardable: true, groupId: -1, frozen: false,
   }))
 
 describe('DomainGroup', () => {

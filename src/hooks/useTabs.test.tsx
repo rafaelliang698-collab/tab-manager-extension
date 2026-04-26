@@ -17,6 +17,7 @@ const makeTab = (id: number, url: string): chrome.tabs.Tab => ({
   discarded: false,
   autoDiscardable: true,
   groupId: -1,
+  frozen: false,
 })
 
 describe('useTabs', () => {

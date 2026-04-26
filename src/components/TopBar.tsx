@@ -8,7 +8,7 @@ interface TopBarProps {
   onSearchChange: (q: string) => void
 }
 
-export default function TopBar({ tabCount, siteCount, searchQuery, onSearchChange }: TopBarProps) {
+export function TopBar({ tabCount, siteCount, searchQuery, onSearchChange }: TopBarProps) {
   const { t } = useTranslation()
 
   const openSettings = () => {
