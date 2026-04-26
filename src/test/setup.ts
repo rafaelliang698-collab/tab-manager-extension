@@ -28,7 +28,12 @@ export const chromeMock = {
     onUpdated: makeEvent('tabs.onUpdated'),
     onActivated: makeEvent('tabs.onActivated'),
   },
-  windows: { update: vi.fn() },
+  windows: {
+    update: vi.fn(),
+    get: vi.fn(),
+    getAll: vi.fn(),
+    onFocusChanged: makeEvent('windows.onFocusChanged'),
+  },
   storage: {
     local: {
       get: vi.fn(),
@@ -54,4 +59,5 @@ Object.defineProperty(global, 'chrome', { value: chromeMock, writable: true })
 beforeEach(() => {
   vi.clearAllMocks()
   mockListeners.clear()
+  Object.defineProperty(global, 'chrome', { value: chromeMock, writable: true })
 })
