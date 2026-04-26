@@ -1,0 +1,59 @@
+:root,
+[data-theme="light"] {
+  --bg-page: linear-gradient(135deg, #eef2ff 0%, #f5f7ff 40%, #eff4ff 100%);
+  --glass-bg: rgba(255, 255, 255, 0.62);
+  --glass-border: rgba(180, 180, 220, 0.28);
+  --glass-border-inner: rgba(180, 180, 220, 0.18);
+  --card-shadow: 0 2px 16px rgba(100, 100, 180, 0.10), inset 0 1px 0 rgba(255,255,255,0.9);
+  --topbar-bg: rgba(255, 255, 255, 0.70);
+  --text: #2d2d4e;
+  --text-strong: #1a1a2e;
+  --text-muted: #9090b0;
+  --accent: #6366f1;
+  --accent-bg: rgba(99, 102, 241, 0.10);
+  --row-hover: rgba(99, 102, 241, 0.07);
+  --close-hover-bg: rgba(239, 68, 68, 0.10);
+  --close-hover-color: #ef4444;
+  --search-bg: rgba(255, 255, 255, 0.80);
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="dark"] {
+  --bg-page: linear-gradient(135deg, #0a0a1a 0%, #111128 40%, #0f1525 100%);
+  --glass-bg: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.11);
+  --glass-border-inner: rgba(255, 255, 255, 0.07);
+  --card-shadow: 0 4px 24px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.08);
+  --topbar-bg: rgba(10, 10, 26, 0.80);
+  --text: rgba(220, 220, 240, 0.85);
+  --text-strong: rgba(230, 230, 250, 0.95);
+  --text-muted: rgba(180, 180, 210, 0.45);
+  --accent: #818cf8;
+  --accent-bg: rgba(129, 140, 248, 0.15);
+  --row-hover: rgba(255, 255, 255, 0.06);
+  --close-hover-bg: rgba(239, 68, 68, 0.20);
+  --close-hover-color: #f87171;
+  --search-bg: rgba(255, 255, 255, 0.06);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg-page: linear-gradient(135deg, #0a0a1a 0%, #111128 40%, #0f1525 100%);
+    --glass-bg: rgba(255, 255, 255, 0.06);
+    --glass-border: rgba(255, 255, 255, 0.11);
+    --glass-border-inner: rgba(255, 255, 255, 0.07);
+    --card-shadow: 0 4px 24px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.08);
+    --topbar-bg: rgba(10, 10, 26, 0.80);
+    --text: rgba(220, 220, 240, 0.85);
+    --text-strong: rgba(230, 230, 250, 0.95);
+    --text-muted: rgba(180, 180, 210, 0.45);
+    --accent: #818cf8;
+    --accent-bg: rgba(129, 140, 248, 0.15);
+    --row-hover: rgba(255, 255, 255, 0.06);
+    --close-hover-bg: rgba(239, 68, 68, 0.20);
+    --close-hover-color: #f87171;
+    --search-bg: rgba(255, 255, 255, 0.06);
+  }
+}
