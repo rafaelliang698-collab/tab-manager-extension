@@ -1,0 +1,10 @@
+{
+  "extName": {
+    "message": "TabFlow — Tab Manager",
+    "description": "Extension name shown in Chrome toolbar and Web Store"
+  },
+  "extDescription": {
+    "message": "View all open tabs grouped by domain in a resizable multi-column grid. Supports light/dark themes.",
+    "description": "Extension description in Chrome Web Store"
+  }
+}

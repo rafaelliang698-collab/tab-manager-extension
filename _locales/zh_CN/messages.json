@@ -1,0 +1,10 @@
+{
+  "extName": {
+    "message": "TabFlow — 标签管理器",
+    "description": "扩展名称，显示在 Chrome 工具栏和网上应用店"
+  },
+  "extDescription": {
+    "message": "在可调整大小的多列网格中，按域名分组查看所有打开的标签页。支持浅色/深色主题。",
+    "description": "Chrome 网上应用店的扩展描述"
+  }
+}
