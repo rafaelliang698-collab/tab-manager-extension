@@ -10,7 +10,7 @@ export function useTabs(): UseTabsResult {
   const refresh = useCallback(() => {
     const managerUrl = chrome.runtime.getURL('src/pages/manager/index.html')
     chrome.tabs.query({}, (allTabs) => {
-      setTabs(allTabs.filter((t) => t.url !== managerUrl))
+      setTabs(allTabs.filter((t) => !t.url?.startsWith(managerUrl)))
     })
   }, [])
 

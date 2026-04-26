@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
-import { ResponsiveGridLayout } from 'react-grid-layout'
-import type { LayoutItem, ResponsiveLayouts } from 'react-grid-layout'
+import { ResponsiveGridLayout, useContainerWidth } from 'react-grid-layout'
+import type { LayoutItem, Layout, ResponsiveLayouts } from 'react-grid-layout'
 import 'react-grid-layout/css/styles.css'
 import { DomainGroup } from './DomainGroup'
 import { getLayout, setLayout } from '../lib/storage'
@@ -24,41 +24,48 @@ interface TabGridProps {
 
 export function TabGrid({ groups, searchQuery }: TabGridProps) {
   const [layout, setLayoutState] = useState<LayoutItem[]>([])
-  const saveTimer = useRef<ReturnType<typeof setTimeout>>(undefined)
+  const savedRef = useRef<LayoutItem[]>([])
+  const saveTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
+  const { width, containerRef } = useContainerWidth()
 
   useEffect(() => {
     getLayout().then(saved => {
+      savedRef.current = saved
       setLayoutState(buildLayout(Array.from(groups.keys()), saved))
     })
+    return () => clearTimeout(saveTimer.current)
   }, [])
 
   useEffect(() => {
-    setLayoutState(prev => buildLayout(Array.from(groups.keys()), prev))
+    setLayoutState(buildLayout(Array.from(groups.keys()), savedRef.current))
   }, [groups])
 
-  const handleLayoutChange = (current: readonly LayoutItem[], _layouts: ResponsiveLayouts) => {
-    const mutable = [...current]
+  const handleLayoutChange = (_current: Layout, _layouts: ResponsiveLayouts) => {
+    const mutable = Array.from(_current)
+    savedRef.current = mutable
     setLayoutState(mutable)
     clearTimeout(saveTimer.current)
     saveTimer.current = setTimeout(() => setLayout(mutable), 500)
   }
 
   return (
-    <ResponsiveGridLayout
-      className="tab-grid"
-      layouts={{ lg: layout }}
-      breakpoints={{ lg: 1200, md: 768, sm: 480 }}
-      cols={{ lg: 3, md: 2, sm: 1 }}
-      width={1200}
-      rowHeight={60}
-      dragConfig={{ handle: '.group-header' }}
-      onLayoutChange={handleLayoutChange}
-    >
-      {Array.from(groups.entries()).map(([domain, tabs]) => (
-        <div key={domain}>
-          <DomainGroup domain={domain} tabs={tabs} searchQuery={searchQuery} />
-        </div>
-      ))}
-    </ResponsiveGridLayout>
+    <div ref={containerRef}>
+      <ResponsiveGridLayout
+        className="tab-grid"
+        layouts={{ lg: layout }}
+        breakpoints={{ lg: 1200, md: 768, sm: 480 }}
+        cols={{ lg: 3, md: 2, sm: 1 }}
+        width={width}
+        rowHeight={60}
+        dragConfig={{ handle: '.group-header' }}
+        onLayoutChange={handleLayoutChange}
+      >
+        {Array.from(groups.entries()).map(([domain, tabs]) => (
+          <div key={domain}>
+            <DomainGroup domain={domain} tabs={tabs} searchQuery={searchQuery} />
+          </div>
+        ))}
+      </ResponsiveGridLayout>
+    </div>
   )
 }
