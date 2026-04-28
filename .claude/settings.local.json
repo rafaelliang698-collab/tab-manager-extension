@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(rm /Volumes/alex-agent/projects/002_chrome_plug-in_program/.git/index.lock)",
-      "Bash(git -C /Volumes/alex-agent/projects/002_chrome_plug-in_program add .gitignore CLAUDE.md docs/ eslint.config.js index.html manifest.json package.json pnpm-lock.yaml public/ src/ tsconfig.app.json tsconfig.json tsconfig.node.json vite.config.ts)",
-      "Bash(git -C /Volumes/alex-agent/projects/002_chrome_plug-in_program status)"
-    ]
-  }
-}

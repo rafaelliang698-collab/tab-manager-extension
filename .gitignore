@@ -1,6 +1,57 @@
-node_modules/
-dist/
+# ==============================================
+# 🔒 Chrome 插件 / 前端项目通用 .gitignore
+# ==============================================
+
+# 系统自动生成文件
 .DS_Store
+.DS_Store?
 ._*
-*.local
-coverage/
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# 编辑器配置
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# AI 工具缓存（你项目里的）
+.claude/
+.superpowers/
+CLAUDE.md
+claude.md
+
+# 环境变量 / 密钥（绝对不能上传）
+.env
+.env.*
+!.env.example
+.secrets
+config.json
+
+# 依赖包
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# 构建 / 打包产物
+dist/
+build/
+output/
+*.zip
+*.crx
+*.exe
+*.tar.gz
+
+# 日志与临时文件
+*.log
+*.tmp
+*.temp
+*.bak
+
+# 浏览器插件额外不需要的
+*.pem
+debug.log
