@@ -1,0 +1,98 @@
+<h2>视觉风格方向 — 你想要哪种感觉？</h2>
+<p class="subtitle">这决定整体配色、字体和交互氛围</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="dark-glass" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:linear-gradient(135deg,#0f0f1a,#1a1a2e);padding:16px;border-radius:8px;min-height:150px;font-family:'Segoe UI',sans-serif;">
+      <div style="backdrop-filter:blur(10px);background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px;">
+        <div style="color:rgba(255,255,255,0.5);font-size:10px;margin-bottom:8px;letter-spacing:2px;text-transform:uppercase;">GOOGLE.COM · 3 tabs</div>
+        <div style="display:flex;align-items:center;gap:8px;padding:6px 8px;background:rgba(255,255,255,0.05);border-radius:6px;margin-bottom:5px;">
+          <span style="font-size:13px;">🔍</span>
+          <span style="color:#e0e0ff;font-size:12px;flex:1;">Gmail</span>
+          <span style="color:rgba(255,255,255,0.25);font-size:11px;">✕</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;padding:6px 8px;background:rgba(255,255,255,0.05);border-radius:6px;">
+          <span style="font-size:13px;">📺</span>
+          <span style="color:#e0e0ff;font-size:12px;flex:1;">YouTube</span>
+          <span style="color:rgba(255,255,255,0.25);font-size:11px;">✕</span>
+        </div>
+      </div>
+      <div style="margin-top:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:12px;">
+        <div style="color:rgba(255,255,255,0.5);font-size:10px;margin-bottom:8px;letter-spacing:2px;text-transform:uppercase;">GITHUB.COM · 2 tabs</div>
+        <div style="display:flex;align-items:center;gap:8px;padding:6px 8px;background:rgba(255,255,255,0.05);border-radius:6px;">
+          <span style="font-size:13px;">🐙</span>
+          <span style="color:#e0e0ff;font-size:12px;flex:1;">Explore</span>
+          <span style="color:rgba(255,255,255,0.25);font-size:11px;">✕</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A · 暗色玻璃态</h3>
+      <p>深色背景 + 毛玻璃卡片，高级感强，适合深夜工作者，视觉层次丰富</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="light-clean" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#f8f9fc;padding:16px;border-radius:8px;min-height:150px;font-family:'Segoe UI',sans-serif;">
+      <div style="background:white;border:1px solid #e8eaf0;border-radius:10px;padding:12px;box-shadow:0 1px 4px rgba(0,0,0,0.06);margin-bottom:8px;">
+        <div style="color:#6366f1;font-size:10px;font-weight:700;margin-bottom:8px;letter-spacing:1px;text-transform:uppercase;">google.com · 3 tabs</div>
+        <div style="display:flex;align-items:center;gap:8px;padding:5px 8px;border-radius:6px;margin-bottom:4px;">
+          <span style="font-size:13px;">🔍</span>
+          <span style="color:#1a1a2e;font-size:12px;flex:1;">Gmail</span>
+          <span style="color:#ccc;font-size:11px;">✕</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;padding:5px 8px;border-radius:6px;">
+          <span style="font-size:13px;">📺</span>
+          <span style="color:#1a1a2e;font-size:12px;flex:1;">YouTube</span>
+          <span style="color:#ccc;font-size:11px;">✕</span>
+        </div>
+      </div>
+      <div style="background:white;border:1px solid #e8eaf0;border-radius:10px;padding:12px;box-shadow:0 1px 4px rgba(0,0,0,0.06);">
+        <div style="color:#ec4899;font-size:10px;font-weight:700;margin-bottom:8px;letter-spacing:1px;text-transform:uppercase;">github.com · 2 tabs</div>
+        <div style="display:flex;align-items:center;gap:8px;padding:5px 8px;border-radius:6px;">
+          <span style="font-size:13px;">🐙</span>
+          <span style="color:#1a1a2e;font-size:12px;flex:1;">Explore</span>
+          <span style="color:#ccc;font-size:11px;">✕</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B · 浅色简洁</h3>
+      <p>白色卡片 + 轻阴影，清爽专业，符合大多数用户习惯，白天使用体验好</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="neo-brutalist" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#fffbe6;padding:16px;border-radius:8px;min-height:150px;font-family:'Courier New',monospace;">
+      <div style="background:#fff;border:2px solid #111;border-radius:4px;padding:12px;box-shadow:3px 3px 0 #111;margin-bottom:8px;">
+        <div style="color:#111;font-size:11px;font-weight:900;margin-bottom:8px;text-transform:uppercase;border-bottom:2px solid #111;padding-bottom:4px;">GOOGLE.COM [3]</div>
+        <div style="display:flex;align-items:center;gap:8px;padding:4px 0;border-bottom:1px dashed #ddd;margin-bottom:4px;">
+          <span style="font-size:13px;">🔍</span>
+          <span style="color:#111;font-size:12px;flex:1;font-weight:600;">Gmail</span>
+          <span style="background:#ff4444;color:white;font-size:9px;padding:1px 5px;border-radius:2px;font-weight:900;">✕</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;padding:4px 0;">
+          <span style="font-size:13px;">📺</span>
+          <span style="color:#111;font-size:12px;flex:1;font-weight:600;">YouTube</span>
+          <span style="background:#ff4444;color:white;font-size:9px;padding:1px 5px;border-radius:2px;font-weight:900;">✕</span>
+        </div>
+      </div>
+      <div style="background:#fff;border:2px solid #111;border-radius:4px;padding:12px;box-shadow:3px 3px 0 #111;">
+        <div style="color:#111;font-size:11px;font-weight:900;margin-bottom:8px;text-transform:uppercase;border-bottom:2px solid #111;padding-bottom:4px;">GITHUB.COM [2]</div>
+        <div style="display:flex;align-items:center;gap:8px;padding:4px 0;">
+          <span style="font-size:13px;">🐙</span>
+          <span style="color:#111;font-size:12px;flex:1;font-weight:600;">Explore</span>
+          <span style="background:#ff4444;color:white;font-size:9px;padding:1px 5px;border-radius:2px;font-weight:900;">✕</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C · 新朴素主义</h3>
+      <p>粗边框 + 偏移阴影 + 高对比，个性鲜明，在同类插件中辨识度极高</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:16px;">点击选择风格，也可以说"我想要深色 + 简洁"这类组合偏好</p>
